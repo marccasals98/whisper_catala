@@ -24,11 +24,3 @@ def get_model():
 
     return model
 
-
-model = WhisperForConditionalGeneration.from_pretrained(MODEL['name'])
-
-# No tokens are forced as decoder outputs.
-model.config.forced_decoder_ids = None 
-
-# No tokens are suppressed during the generation.
-model.config.suppress_tokens = []

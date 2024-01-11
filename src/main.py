@@ -1,11 +1,11 @@
 from transformers import WhisperProcessor
-from transformers import WhisperFeatureExtractor
-from transformers import WhisperTokenizer
-from src.config import MODEL
+from train import get_trainer
 
-# Pads / truncates the audio inputs to 30s and log-mel spectrogram
-feature_extractor = WhisperFeatureExtractor.from_pretrained(MODEL['name'])
 
-# Load tokenizer 
-tokenizer = WhisperTokenizer.from_pretrained(MODEL['name'], language=MODEL['language'], task=MODEL['task'])
+def main():
+    trainer = get_trainer()
+    trainer.train()
 
+
+if __name__=='__main__':
+    main()

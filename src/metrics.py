@@ -1,8 +1,23 @@
 import evaluate
 
-metric = evaluate.load("wer")
 
 def compute_metrics(pred, tokenizer):
+    """
+    Computes the WER (Word Error Rate)
+
+    Arguments:
+    ----------
+    pred:
+        Object that contains both the prediction and the ground truth
+    tokenizer:
+        The tokenizer necessary to do the calculation
+    
+    Returns:
+    --------
+    wer: float
+        The resulting metric. 
+    """
+    metric = evaluate.load("wer")
     pred_ids = pred.predictions
     label_ids = pred.label_ids
 

@@ -6,6 +6,11 @@ MODEL = {
     'task': "transcribe"
 }
 
+DATASET =   {
+    'name': "mozilla-foundation/common_voice_11_0",
+    'language': "hi"
+}
+
 training_args = Seq2SeqTrainingArguments(
     output_dir="./whisper-small-hi",  # change to a repo name of your choice
     per_device_train_batch_size=16,

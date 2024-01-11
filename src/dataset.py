@@ -6,9 +6,13 @@ In this file we specify and treat the different datasets that we are using.
 
 from datasets import load_dataset, DatasetDict
 from datasets import Audio
+from transformers import WhisperFeatureExtractor
+from transformers import WhisperTokenizer
+from config import MODEL, DATASET
 
 
-def prepare_dataset(batch, feature_extractor, tokenizer):
+
+def prepare_dataset(batch):
     """
     Readies the data for the model.
 
@@ -16,16 +20,19 @@ def prepare_dataset(batch, feature_extractor, tokenizer):
     ----------
     batch: type
         Each batch of data.
-    feature_extractor: TODO
-        Pads / truncates the audio inputs to 30s and log-mel spectrogram
-    tokenizer: TODO    
-        The tokenizer goes from tokens to strings.
 
     Returns:
     --------
     batch : type 
         Each batch of data
     """
+
+    # Pads / truncates the audio inputs to 30s and log-mel spectrogram
+    feature_extractor = WhisperFeatureExtractor.from_pretrained(MODEL['name'])
+
+    # Load tokenizer 
+    tokenizer = WhisperTokenizer.from_pretrained(MODEL['name'], language=MODEL['language'], task=MODEL['task'])
+    
     # load and resample audio data from 48 to 16kHz
     audio = batch["audio"]
 
@@ -38,21 +45,33 @@ def prepare_dataset(batch, feature_extractor, tokenizer):
     return batch
 
 
+def get_common_voice():
+    """
+    Do necessary preprocessing steps to obtain the samples of common_voice dataset
 
+    Arguments:
+    ----------
+    None
 
-# Treating the dataset as a dictionary
-common_voice = DatasetDict()
+    Returns: 
+    --------
+    common_voice: dict
+        The Datset completed. 
+    """
+    # Treating the dataset as a dictionary
+    common_voice = DatasetDict()
 
-# Making the partition train/test: 
-common_voice["train"] = load_dataset("mozilla-foundation/common_voice_11_0", "hi", split="train+validation", use_auth_token=True)
-common_voice["test"] = load_dataset("mozilla-foundation/common_voice_11_0", "hi", split="test", use_auth_token=True)
+    # Making the partition train/test: 
+    common_voice["train"] = load_dataset(DATASET['name'], DATASET['language'], split="train+validation", use_auth_token=True)
+    common_voice["test"] = load_dataset(DATASET['name'], DATASET['language'], split="test", use_auth_token=True)
 
-# For the moment we will discard some audio information to simplify the task. 
-common_voice = common_voice.remove_columns(["accent", "age", "client_id", "down_votes", "gender", "locale", "path", "segment", "up_votes"])
+    # For the moment we will discard some audio information to simplify the task. 
+    common_voice = common_voice.remove_columns(["accent", "age", "client_id", "down_votes", "gender", "locale", "path", "segment", "up_votes"])
 
-# Downsample on the fly:
-common_voice = common_voice.cast_column("audio", Audio(sampling_rate=16000))
+    # Downsample on the fly:
+    common_voice = common_voice.cast_column("audio", Audio(sampling_rate=16000))
 
-# Apply the function 'prepare_dataset' to all of the elements
-common_voice = common_voice.map(prepare_dataset, remove_columns=common_voice.column_names["train"], num_proc=2)
+    # Apply the function 'prepare_dataset' to all of the elements
+    common_voice = common_voice.map(prepare_dataset, remove_columns=common_voice.column_names["train"], num_proc=2)
 
+    return common_voice

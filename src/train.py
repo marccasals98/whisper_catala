@@ -23,9 +23,10 @@ def get_trainer():
     
     processor = WhisperProcessor.from_pretrained(MODEL['name'], language=MODEL['language'], task=MODEL['task'])
     
+    common_voice = get_common_voice()
+    
     model = get_model()
 
-    common_voice = get_common_voice()
 
     data_collator = DataCollatorSpeechSeq2SeqWithPadding(processor=processor)
 

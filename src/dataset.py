@@ -9,22 +9,23 @@ from datasets import Audio
 from transformers import WhisperFeatureExtractor
 from transformers import WhisperTokenizer
 from config import MODEL, DATASET
+import datasets
 
 
 
-def prepare_dataset(batch):
+def prepare_dataset(batch: datasets.formatting.formatting.LazyRow):
     """
     Readies the data for the model.
 
     Arguments:
     ----------
-    batch: type
-        Each batch of data.
+    batch: datasets.formatting.formatting.LazyRow
+        A batch is a set of samples.
 
     Returns:
     --------
-    batch : type 
-        Each batch of data
+    batch : datasets.formatting.formatting.LazyRow 
+        A batch is a set of samples. We returned processed.
     """
 
     # Pads / truncates the audio inputs to 30s and log-mel spectrogram
@@ -74,4 +75,6 @@ def get_common_voice():
     # Apply the function 'prepare_dataset' to all of the elements
     common_voice = common_voice.map(prepare_dataset, remove_columns=common_voice.column_names["train"], num_proc=2)
 
+    print("El tipus de common voice", type(common_voice))
     return common_voice
+

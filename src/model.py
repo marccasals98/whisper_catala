@@ -1,7 +1,7 @@
 from transformers import WhisperForConditionalGeneration
 from config import MODEL
 
-def get_model():
+def get_model()->WhisperForConditionalGeneration:
     """
     Imports the model
 
@@ -11,7 +11,7 @@ def get_model():
 
     Returns:
     --------
-    model: 
+    model: WhisperForConditionalGeneration
         The Whisper model with the desired size. 
     """
     model = WhisperForConditionalGeneration.from_pretrained(MODEL['name'])
@@ -21,6 +21,6 @@ def get_model():
 
     # No tokens are suppressed during the generation.
     model.config.suppress_tokens = []
-
+    print("El tipus de model", type(model))
     return model
 

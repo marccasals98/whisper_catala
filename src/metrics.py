@@ -7,9 +7,9 @@ def compute_metrics(pred, tokenizer):
 
     Arguments:
     ----------
-    pred:
+    pred : TODO
         Object that contains both the prediction and the ground truth
-    tokenizer:
+    tokenizer : TODO
         The tokenizer necessary to do the calculation
     
     Returns:

@@ -1,0 +1,9 @@
+torch
+transformers[torch]
+datasets>=2.6.1
+librosa
+evaluate>=0.3
+jiwer
+gradio
+git+https://github.com/huggingface/transformers
+

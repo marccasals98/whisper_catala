@@ -6,4 +6,4 @@ evaluate>=0.3
 jiwer
 gradio
 git+https://github.com/huggingface/transformers
-
+tensorboardX

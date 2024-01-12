@@ -21,8 +21,9 @@ pip install -r requirements.txt
 
 **Warning!**
 
-It is possible that the accelerate library needs to be installed as follows:
+The following libraries need to be installed manually from terminal:
 ```pip install accelerate -U```
+```pip install transformers[torch]```
 
 TODO: Solve this.
 

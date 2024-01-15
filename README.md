@@ -22,8 +22,13 @@ pip install -r requirements.txt
 **Warning!**
 
 The following libraries need to be installed manually from terminal:
-```pip install accelerate -U```
-```pip install transformers[torch]```
+```bash
+pip install accelerate -U
+```
+
+```bash
+pip install transformers[torch]
+```
 
 TODO: Solve this.
 

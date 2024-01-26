@@ -1,9 +1,36 @@
+"""
+DATA COLLATOR.
+
+Data collators are objects that will forma batch by using a list of dataset elements as input.
+
+These elements are of the same type as the elements of trained_dataset or eval_dataset.
+
+"""
+
 import torch
 from dataclasses import dataclass
 from typing import Any, Dict, List, Union
 
-@dataclass
+@dataclass # automatically write __init__() and __repr__()
 class DataCollatorSpeechSeq2SeqWithPadding:
+    """
+    
+    Attributes:
+    ----------
+    processor: ...
+        ... 
+
+    features: List[Dict[str, Union[List[int], torch.Tensor]]]
+        ...
+  
+    Methods:
+    --------
+    call: self, features --> Dict
+        By puting the parenthesis in the object, will automatically invoke the call method. 
+        For example:
+            data = DataCollatorSpeechSeq2SeqWithPadding()
+            data() 
+    """
     processor: Any
 
     def __call__(self, features: List[Dict[str, Union[List[int], torch.Tensor]]]) -> Dict[str, torch.Tensor]:

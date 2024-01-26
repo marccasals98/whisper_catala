@@ -27,7 +27,6 @@ def get_trainer():
     
     model = get_model()
 
-
     data_collator = DataCollatorSpeechSeq2SeqWithPadding(processor=processor)
 
     trainer = Seq2SeqTrainer(

@@ -1,5 +1,12 @@
-# Catalan Whisper 
+# Catalan Whisper (Cluster Version)
 Finetuning whisper with Catalan datasets to change the domain of the original model.
+
+## What's new?
+This is the BSC's Cluster version. For this reason, there will be some changes. 
+
+1. **Dataset creation:**The dataset will be imported from the cluster instead of being downloaded from the HF Hub. 
+
+
 
 ## Initialization
 

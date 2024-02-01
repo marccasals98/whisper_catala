@@ -11,6 +11,10 @@ DATASET =   {
     'language': "hi"
 }
 
+PATHS = {
+    'CV_9' : '/gpfs/projects/bsc88/speech/data/common_voice_9_0'
+}
+
 training_args = Seq2SeqTrainingArguments(
     output_dir="./whisper-small-hi",  # change to a repo name of your choice
     per_device_train_batch_size=1,

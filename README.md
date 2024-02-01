@@ -5,6 +5,7 @@ Finetuning whisper with Catalan datasets to change the domain of the original mo
 This is the BSC's Cluster version. For this reason, there will be some changes. 
 
 1. **Dataset creation:**The dataset will be imported from the cluster instead of being downloaded from the HF Hub. 
+2. **Model loading:** The model will also be loaded locally.
 
 
 

@@ -10,3 +10,4 @@ pip install --no-index --find-links=/gpfs/projects/bsc88/wheels /gpfs/projects/b
 
 pip install --no-index --find-links=/gpfs/projects/bsc88/wheels /gpfs/projects/bsc88/wheels/tensorboardX-2.6-py2.py3-none-any.whl
 # pip install --no-index --find-links=/gpfs/projects/bsc88/wheels /gpfs/projects/bsc88/wheels/gradio-2.8.10-py3-none-any.whl
+pip install --no-index --find-links=/gpfs/projects/bsc88/wheels /gpfs/projects/bsc88/wheels//transformers-4.4.2-py3-none-any.whl

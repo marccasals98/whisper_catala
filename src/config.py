@@ -2,17 +2,17 @@ from transformers import Seq2SeqTrainingArguments
 
 MODEL = {
     'name': "openai/whisper-small",
-    'language': "Hindi",
+    'language': "Catalan",
     'task': "transcribe"
 }
 
 DATASET =   {
     'name': "mozilla-foundation/common_voice_11_0",
-    'language': "hi"
+    'language': "ca"
 }
 
 training_args = Seq2SeqTrainingArguments(
-    output_dir="./whisper-small-hi",  # change to a repo name of your choice
+    output_dir="./whisper-small-ca",  # change to a repo name of your choice
     per_device_train_batch_size=1,
     gradient_accumulation_steps=1,  # increase by 2x for every 2x decrease in batch size
     learning_rate=1e-5,

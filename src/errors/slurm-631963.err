@@ -1,0 +1,2 @@
+load SINGULARITY/3.6.4 (PATH)
+FATAL:   could not open image /gpfs/projects/bsc88/singularity-images/whisper_catala: failed to retrieve path for /gpfs/projects/bsc88/singularity-images/whisper_catala: lstat /gpfs/projects/bsc88/singularity-images/whisper_catala: no such file or directory

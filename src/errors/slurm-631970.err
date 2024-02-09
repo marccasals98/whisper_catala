@@ -1,0 +1,36 @@
+unload SINGULARITY/3.6.4 (PATH)
+load SINGULARITY/3.6.4 (PATH)
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+Traceback (most recent call last):
+  File "/home/bsc88/bsc88135/.local/lib/python3.9/site-packages/transformers/utils/hub.py", line 417, in cached_file
+    resolved_file = hf_hub_download(
+  File "/home/bsc88/bsc88135/.local/lib/python3.9/site-packages/huggingface_hub/utils/_validators.py", line 118, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/bsc88/bsc88135/.local/lib/python3.9/site-packages/huggingface_hub/file_download.py", line 1368, in hf_hub_download
+    raise LocalEntryNotFoundError(
+huggingface_hub.utils._errors.LocalEntryNotFoundError: Cannot find the requested files in the disk cache and outgoing traffic has been disabled. To enable hf.co look-ups and downloads online, set 'local_files_only' to False.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/gpfs/projects/bsc88/speech/asr/ft_whisper_v3/whisper_catala/src/main.py", line 11, in <module>
+    main()
+  File "/gpfs/projects/bsc88/speech/asr/ft_whisper_v3/whisper_catala/src/main.py", line 6, in main
+    trainer = get_trainer()
+  File "/gpfs/projects/bsc88/speech/asr/ft_whisper_v3/whisper_catala/src/train.py", line 24, in get_trainer
+    processor = WhisperProcessor.from_pretrained(MODEL['name'], language=MODEL['language'], task=MODEL['task'])
+  File "/home/bsc88/bsc88135/.local/lib/python3.9/site-packages/transformers/processing_utils.py", line 184, in from_pretrained
+    args = cls._get_arguments_from_pretrained(pretrained_model_name_or_path, **kwargs)
+  File "/home/bsc88/bsc88135/.local/lib/python3.9/site-packages/transformers/processing_utils.py", line 228, in _get_arguments_from_pretrained
+    args.append(attribute_class.from_pretrained(pretrained_model_name_or_path, **kwargs))
+  File "/home/bsc88/bsc88135/.local/lib/python3.9/site-packages/transformers/feature_extraction_utils.py", line 330, in from_pretrained
+    feature_extractor_dict, kwargs = cls.get_feature_extractor_dict(pretrained_model_name_or_path, **kwargs)
+  File "/home/bsc88/bsc88135/.local/lib/python3.9/site-packages/transformers/feature_extraction_utils.py", line 430, in get_feature_extractor_dict
+    resolved_feature_extractor_file = cached_file(
+  File "/home/bsc88/bsc88135/.local/lib/python3.9/site-packages/transformers/utils/hub.py", line 452, in cached_file
+    raise EnvironmentError(
+OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like openai/whisper-small is not the path to a directory containing a file named preprocessor_config.json.
+Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.

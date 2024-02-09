@@ -8,5 +8,5 @@
 #SBATCH --gres=gpu:5
 
 module load singularity/3.6.4
-singularity exec whisper-catala python src/main.py
+singularity exec /gpfs/projects/bsc88/singularity-images/whisper_catala python src/main.py
 

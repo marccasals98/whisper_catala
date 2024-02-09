@@ -7,4 +7,6 @@
 #SBATCH --mem=32G                    # Job memory request
 #SBATCH --gres=gpu:5
 
-python3 src/main.py
+module load singularity/3.6.4
+singularity exec whisper-catala python src/main.py
+

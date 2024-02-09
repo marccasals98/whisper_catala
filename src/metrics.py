@@ -5,6 +5,9 @@ def compute_metrics(pred, tokenizer):
     """
     Computes the WER (Word Error Rate)
 
+    TODO: The tokenizer gives an error because it shouldn't be passed as an argument of this function.
+    Then, because this function is called in train.py, speciefically in get_trainer(), it gives an error.
+
     Arguments:
     ----------
     pred : TODO

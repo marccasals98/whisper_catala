@@ -20,12 +20,12 @@ class DataCollatorSpeechSeq2SeqWithPadding:
     processor: ...
         ... 
 
-    features: List[Dict[str, Union[List[int], torch.Tensor]]]
+    features: `List[Dict[str, Union[List[int], torch.Tensor]]]`
         ...
   
     Methods:
     --------
-    call: self, features --> Dict
+    call: `self`, `features --> Dict`
         By puting the parenthesis in the object, will automatically invoke the call method. 
         For example:
             data = DataCollatorSpeechSeq2SeqWithPadding()

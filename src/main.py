@@ -1,4 +1,3 @@
-from transformers import WhisperProcessor
 from train import get_trainer
 
 

@@ -19,12 +19,12 @@ def prepare_dataset(batch: datasets.formatting.formatting.LazyRow):
 
     Arguments:
     ----------
-    batch: datasets.formatting.formatting.LazyRow
+    batch: `datasets.formatting.formatting.LazyRow`
         A batch is a set of samples.
 
     Returns:
     --------
-    batch : datasets.formatting.formatting.LazyRow 
+    batch : `datasets.formatting.formatting.LazyRow `
         A batch is a set of samples. We returned processed.
     """
 

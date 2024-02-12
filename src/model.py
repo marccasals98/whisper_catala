@@ -11,7 +11,7 @@ def get_model()->WhisperForConditionalGeneration:
 
     Returns:
     --------
-    model: WhisperForConditionalGeneration
+    model: `WhisperForConditionalGeneration`
         The Whisper model with the desired size. 
     """
     model = WhisperForConditionalGeneration.from_pretrained(MODEL['name'])

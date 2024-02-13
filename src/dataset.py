@@ -10,6 +10,8 @@ from transformers import WhisperFeatureExtractor
 from transformers import WhisperTokenizer
 from config import MODEL, DATASET
 import datasets
+from datasets import IterableDatasetDict
+
 
 
 
@@ -60,7 +62,7 @@ def get_common_voice():
         The Datset completed. 
     """
     # Treating the dataset as a dictionary
-    common_voice = DatasetDict()
+    common_voice = IterableDatasetDict()
 
     # Making the partition train/test: 
     # Before: split="train+validation"

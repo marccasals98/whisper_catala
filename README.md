@@ -1,6 +1,11 @@
 # Catalan Whisper 
 Finetuning whisper with Catalan datasets to change the domain of the original model.
 
+## Colab's version
+Initially, the code was designed to fine-tune whisper with the Hindi language. The code was run successfully in a Colab. However, Catalan's dataset in Common-Voice is one of the biggest datasets that exists, so, downloading directly in the Colab, fills up the available SSD in the Colab. 
+
+To overcome this problem, what it needs to be done is, instead of downloading the Dataset, use streaming. This just downloads the parts of the dataset that we are going to use. 
+
 ## Initialization
 
 1. Creation and activation of the Python venv:

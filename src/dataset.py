@@ -78,6 +78,8 @@ def get_common_voice():
     # Downsample on the fly:
     common_voice = common_voice.cast_column("audio", Audio(sampling_rate=16000))
 
+    for data in common_voice:
+        print("Aquiii", data.column_names["train"])
     # Apply the function 'prepare_dataset' to all of the elements
     common_voice = common_voice.map(prepare_dataset, remove_columns=common_voice.column_names["train"], num_proc=2)
 

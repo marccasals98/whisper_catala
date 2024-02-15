@@ -16,7 +16,14 @@ source <venv>/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
-3. Run the ```main.py``` either locally or in any cluster using SLURM (Or whatever you have there).
+
+3. Create environmental variable with the hugging face token: `export HF_TOKEN=hf_yOurToKEn'. You can check that it was properly created by writing:
+
+```bash
+printenv
+```
+ 
+4. Run the ```main.py``` either locally or in any cluster using SLURM (Or whatever you have there).
 
 
 **Warning!**
@@ -31,6 +38,8 @@ pip install transformers[torch]
 ```
 
 TODO: Solve this.
+
+In theory now it is solved. 
 
 ## Datasets
 For the moment, we encompass the following Datasets:

@@ -5,6 +5,7 @@
 #SBATCH --job-name=whisper_finetune    # Job name
 #SBATCH --cpus-per-task=4                  # Run on 4 CPU
 #SBATCH --mem=32G                    # Job memory request
-#SBATCH --gres=gpu:5
+#SBATCH --gres=gpu:1
+##SBATCH --nodelist=veuc12
 
 python3 src/main.py

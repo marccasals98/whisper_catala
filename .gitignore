@@ -162,3 +162,10 @@ cython_debug/
 
 # Remove the venvs:
 whisper_venv/
+
+# Remove logs and errors:
+src/logs/
+src/errors/
+
+# Remove strange folder
+whisper-small-hi/

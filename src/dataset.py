@@ -63,8 +63,8 @@ def get_common_voice():
     common_voice = DatasetDict()
 
     # Making the partition train/test: 
-    common_voice["train"] = load_dataset(DATASET['name'], split="train+validation", use_auth_token=True)
-    common_voice["test"] = load_dataset(DATASET['name'], split="test", use_auth_token=True)
+    common_voice["train"] = load_dataset(DATASET['name'], DATASET['language'], split="train+validation", use_auth_token=True)
+    common_voice["test"] = load_dataset(DATASET['name'], DATASET['language'], split="test", use_auth_token=True)
 
     # For the moment we will discard some audio information to simplify the task. 
     common_voice = common_voice.remove_columns(["accent", "age", "client_id", "down_votes", "gender", "locale", "path", "segment", "up_votes"])

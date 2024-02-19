@@ -1,11 +1,13 @@
 #!/bin/bash
+#SBATCH -D .
 #SBATCH --output=src/logs/slurm-%j.out  # Standard output and error log
 #SBATCH --error=src/errors/slurm-%j.err
-#SBATCH --partition=veu
 #SBATCH --job-name=whisper_finetune    # Job name
-#SBATCH --cpus-per-task=4                  # Run on 4 CPU
+#SBATCH --cpus-per-task=1                  # Run on 4 CPU
 #SBATCH --mem=32G                    # Job memory request
 #SBATCH --gres=gpu:1
-##SBATCH --nodelist=veuc12
 
-python3 src/main.py
+export HF_DATASETS_OFFLINE=1 
+export TRANSFORMERS_OFFLINE=1
+module load singularity/3.6.4
+singularity exec /gpfs/projects/bsc88/singularity-images/whisper-catala python3 /gpfs/projects/bsc88/speech/asr/ft_whisper_v3/whisper_catala/src/main.py

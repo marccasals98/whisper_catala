@@ -3,7 +3,8 @@ from transformers import Seq2SeqTrainingArguments
 MODEL = {
     'name': "openai/whisper-small",
     'language': "Catalan",
-    'task': "transcribe"
+    'task': "transcribe",
+    'local_files_only': True 
 }
 
 DATASET =   {

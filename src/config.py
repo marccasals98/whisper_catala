@@ -9,7 +9,7 @@ MODEL = {
 
 DATASET =   {
     'name': "/gpfs/projects/bsc88/speech/data/parlament_parla/parlament_parla.py",
-    'language': "ca"
+    'language': "clean"
 }
 
 training_args = Seq2SeqTrainingArguments(

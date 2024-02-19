@@ -1,14 +1,14 @@
 from transformers import Seq2SeqTrainingArguments
 
 MODEL = {
-    'name': "openai/whisper-small",
+    'name': "/gpfs/scratch/bsc88/bsc88437/speech-tech-resources/checkpoints/whisper-tiny/",
     'language': "Catalan",
     'task': "transcribe",
     'local_files_only': True 
 }
 
 DATASET =   {
-    'name': "mozilla-foundation/common_voice_11_0",
+    'name': "/gpfs/projects/bsc88/speech/data/parlament_parla/parlament_parla.py",
     'language': "ca"
 }
 

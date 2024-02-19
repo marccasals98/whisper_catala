@@ -8,8 +8,8 @@ MODEL = {
 }
 
 DATASET =   {
-    'name': "/gpfs/projects/bsc88/speech/data/parlament_parla/parlament_parla.py",
-    'language': "clean"
+    'name': "/gpfs/projects/bsc88/speech/data/cv-corpus-16.1-delta-2023-12-06-ca/cv-corpus-16.1-delta-2023-12-06",
+    'language': "ca"
 }
 
 training_args = Seq2SeqTrainingArguments(

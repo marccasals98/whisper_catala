@@ -1,6 +1,8 @@
 # Catalan Whisper 
 Finetuning whisper with Catalan datasets to change the domain of the original model.
 
+test
+
 ## Initialization
 
 1. Creation and activation of the Python venv:
